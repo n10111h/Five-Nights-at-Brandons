@@ -1,2 +1,3 @@
 # Five-Nights-at-Brandons
-Brandon has something.
+Yea so this is just some dumb game.
+Something Something Something.
