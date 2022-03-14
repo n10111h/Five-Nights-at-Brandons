@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CameraTog : MonoBehaviour
+public class CameraUI : MonoBehaviour
 {
     private float yPos;
     private bool IsOpen;
     private RectTransform rt;
     private float height;
+    public RawImage CamDisplay;
+    public Texture cam1;
+    public Texture cam2;
+    public Texture cam3;
+    public Texture cam4;
+    public Texture cam5;
+    public Texture cam6;
+    public Texture cam7;
+    public Texture cam8;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +25,38 @@ public class CameraTog : MonoBehaviour
         rt = GetComponent<RectTransform>();
         IsOpen = false;
         rt.sizeDelta = new Vector2(Screen.width, height);
+    }
+    public void changeCam(byte num)
+    {
+        switch (num)
+        {
+            case 1:
+                CamDisplay.texture = cam1;
+                break;
+            case 2:
+                CamDisplay.texture = cam2;
+                break;
+            case 3:
+                CamDisplay.texture = cam3;
+                break;
+            case 4:
+                CamDisplay.texture = cam4;
+                break;
+            case 5:
+                CamDisplay.texture = cam5;
+                break;
+            case 6:
+                CamDisplay.texture = cam6;
+                break;
+            case 7:
+                CamDisplay.texture = cam7;
+                break;
+            case 8:
+                CamDisplay.texture = cam8;
+                break;
+            default:
+                break;
+        }
     }
     void Update()
     {

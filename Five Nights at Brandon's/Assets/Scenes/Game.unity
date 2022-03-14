@@ -744,6 +744,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a780ddcdd5d94134aa2e7be1f37f44a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CamDisplay: {fileID: 1748977068}
+  cam1: {fileID: 8400000, guid: d4d31d4c006c20741926ab61f3d4532d, type: 2}
+  cam2: {fileID: 8400000, guid: 3926a2ee678a2574e90a44426f440da9, type: 2}
+  cam3: {fileID: 8400000, guid: ba6b202642a0caf4ba336e93bba3566f, type: 2}
+  cam4: {fileID: 8400000, guid: 81271296d26838b46921de6a0c5a1ee1, type: 2}
+  cam5: {fileID: 8400000, guid: 8c589f655bdfc4f4188db5b8ce4ef37c, type: 2}
+  cam6: {fileID: 8400000, guid: 2f95b818842792848b4597c9f32e324e, type: 2}
+  cam7: {fileID: 8400000, guid: f0226874470f6224bb7f91c741a2933a, type: 2}
+  cam8: {fileID: 8400000, guid: e42323b454a75fb4eb8d725e46468f6f, type: 2}
 --- !u!1 &708754444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7820893088137326993, guid: 9a2e37cadcdfa0e449bc7727bb093e24, type: 3}
@@ -1541,7 +1550,7 @@ GameObject:
   - component: {fileID: 1395757428}
   - component: {fileID: 1395757427}
   m_Layer: 5
-  m_Name: CamsUI
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
