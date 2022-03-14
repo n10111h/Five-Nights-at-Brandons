@@ -8,11 +8,14 @@ public class CameraTog : MonoBehaviour
     private float yPos;
     private bool IsOpen;
     private RectTransform rt;
+    private float height;
     // Start is called before the first frame update
     void Start()
     {
+        height = Screen.height;
         rt = GetComponent<RectTransform>();
         IsOpen = false;
+        rt.sizeDelta = new Vector2(Screen.width, height);
     }
     void Update()
     {
@@ -42,7 +45,7 @@ public class CameraTog : MonoBehaviour
         }
         else
         {
-            if (yPos > -600)
+            if (yPos > -1*height)
             {
                 yPos -= 30;
                 rt.anchoredPosition = new Vector2(0.0f, yPos);
