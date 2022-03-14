@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 
-
+    private bool dDown;
+    private bool aDown;
     // Update is called once per frame
     float AngleAboutY(Transform obj)
     {
@@ -14,13 +15,37 @@ public class PlayerInput : MonoBehaviour
         float sign = Mathf.Sign(Vector3.Cross(objFwd, Vector3.forward).y);
         return angle * sign;
     }
-    void FixedUpdate()
+    void Start()
+    {
+        dDown = false;
+        aDown = false;
+    }
+    void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            if (AngleAboutY(this.transform) > 130 || AngleAboutY(this.transform) < 0) transform.Rotate(0f, 1f, 0f, Space.World);
+            dDown = true;
+        }
+        else
+        {
+            dDown = false;
         }
         if (Input.GetKey(KeyCode.A))
+        {
+            aDown = true;
+        } 
+        else
+        {
+            aDown = false;
+        }
+    }
+    void FixedUpdate()
+    {
+        if (dDown)
+        {
+            if (AngleAboutY(this.transform) > 130 || AngleAboutY(this.transform) < 0) transform.Rotate(0f, 1f, 0f, Space.World);
+        }
+        if (aDown)
         {
             if (AngleAboutY(this.transform) < -130 || AngleAboutY(this.transform) > 0) transform.Rotate(0f, -1f, 0f, Space.World);
         }
