@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerInput : MonoBehaviour
 {
 
     private bool dDown;
     private bool aDown;
+    public GameObject rightDoor;
+    public GameObject leftDoor;
+    public bool rightDoorClosed;
+    public bool leftDoorClosed;
     // Update is called once per frame
     float AngleAboutY(Transform obj)
     {
@@ -19,6 +22,8 @@ public class PlayerInput : MonoBehaviour
     {
         dDown = false;
         aDown = false;
+        rightDoorClosed = false;
+        leftDoorClosed = false;
     }
     void Update()
     {
@@ -37,6 +42,22 @@ public class PlayerInput : MonoBehaviour
         else
         {
             aDown = false;
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            leftDoorClosed = true;
+        }
+        else
+        {
+            leftDoorClosed = false;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            rightDoorClosed = true;
+        }
+        else
+        {
+            rightDoorClosed = false;
         }
     }
     void FixedUpdate()
