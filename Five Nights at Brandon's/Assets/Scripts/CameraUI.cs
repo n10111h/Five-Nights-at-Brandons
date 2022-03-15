@@ -26,7 +26,7 @@ public class CameraUI : MonoBehaviour
         IsOpen = false;
         rt.sizeDelta = new Vector2(Screen.width, height);
     }
-    public void changeCam(byte num)
+    public void changeCam(int num)
     {
         switch (num)
         {
