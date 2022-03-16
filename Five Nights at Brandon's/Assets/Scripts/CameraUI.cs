@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CameraUI : MonoBehaviour
 {
     private float yPos;
-    private bool IsOpen;
+    public bool IsOpen;
     private RectTransform rt;
     private float height;
     public RawImage CamDisplay;
