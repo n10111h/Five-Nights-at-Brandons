@@ -17,6 +17,14 @@ public class power : MonoBehaviour
     }
     void FixedUpdate()
     {
-        GetComponent<Text>().text = "POWER: " + Math.Floor(powerPercent) + '%';
+        if (powerPercent >= 0)
+        {
+            GetComponent<Text>().text = "POWER: " + Math.Floor(powerPercent) + '%';
+        }
+        else
+        {
+            GetComponent<Text>().fontSize = 14;
+            GetComponent<Text>().text = "Imagine running out of power.";
+        }
     }
 }

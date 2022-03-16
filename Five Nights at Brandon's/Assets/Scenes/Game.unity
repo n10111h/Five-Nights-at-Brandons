@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 67266058}
   - component: {fileID: 67266057}
   - component: {fileID: 67266060}
+  - component: {fileID: 67266061}
   m_Layer: 0
   m_Name: Cam8
   m_TagString: Untagged
@@ -348,6 +349,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &67266061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67266056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8608fdd384aa4cb71386062cbb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
 --- !u!1 &85177670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1042,7 @@ GameObject:
   - component: {fileID: 302928219}
   - component: {fileID: 302928218}
   - component: {fileID: 302928217}
+  - component: {fileID: 302928221}
   m_Layer: 0
   m_Name: Cam4
   m_TagString: Untagged
@@ -1162,6 +1177,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &302928221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302928216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8608fdd384aa4cb71386062cbb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
 --- !u!1 &309443945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,6 +3759,7 @@ GameObject:
   - component: {fileID: 922857401}
   - component: {fileID: 922857400}
   - component: {fileID: 922857403}
+  - component: {fileID: 922857404}
   m_Layer: 0
   m_Name: Cam5
   m_TagString: Untagged
@@ -3865,6 +3894,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &922857404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922857399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8608fdd384aa4cb71386062cbb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
 --- !u!1 &956950411
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,6 +5379,7 @@ GameObject:
   - component: {fileID: 1303324357}
   - component: {fileID: 1303324356}
   - component: {fileID: 1303324359}
+  - component: {fileID: 1303324360}
   m_Layer: 0
   m_Name: Cam7
   m_TagString: Untagged
@@ -5471,6 +5514,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1303324360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303324355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8608fdd384aa4cb71386062cbb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
 --- !u!1001 &1322362289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6554,6 +6610,7 @@ GameObject:
   - component: {fileID: 1655368603}
   - component: {fileID: 1655368602}
   - component: {fileID: 1655368601}
+  - component: {fileID: 1655368605}
   m_Layer: 0
   m_Name: Cam6
   m_TagString: Untagged
@@ -6688,6 +6745,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 14.653, y: 207.963, z: 0}
+--- !u!114 &1655368605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655368600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8608fdd384aa4cb71386062cbb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
 --- !u!1 &1728884113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7851,6 +7921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2145651157}
   - component: {fileID: 2145651156}
+  - component: {fileID: 2145651158}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -7934,3 +8005,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145651158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145651155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec8608fdd384aa4cb71386062cbb6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
