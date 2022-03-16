@@ -2379,11 +2379,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609390941}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116db5c4201ce8d4e94a39c891d54b69, type: 3}
+  m_Script: {fileID: 11500000, guid: 772bb4a3083c9264897a264dea4dc375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerPercent: 100
 --- !u!1 &618981391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2493,7 @@ MonoBehaviour:
   cam6: {fileID: 8400000, guid: 2f95b818842792848b4597c9f32e324e, type: 2}
   cam7: {fileID: 8400000, guid: f0226874470f6224bb7f91c741a2933a, type: 2}
   cam8: {fileID: 8400000, guid: e42323b454a75fb4eb8d725e46468f6f, type: 2}
+  powerUI: {fileID: 609390941}
 --- !u!1 &672380523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6385,7 +6387,6 @@ GameObject:
   - component: {fileID: 1625863689}
   - component: {fileID: 1625863692}
   - component: {fileID: 1625863691}
-  - component: {fileID: 1625863690}
   m_Layer: 6
   m_Name: Time
   m_TagString: Untagged
@@ -6412,18 +6413,6 @@ RectTransform:
   m_AnchoredPosition: {x: -80, y: -46.440247}
   m_SizeDelta: {x: 160, y: 92.88049}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1625863690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625863688}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116db5c4201ce8d4e94a39c891d54b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1625863691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7612,6 +7601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightDoor: {fileID: 1388500837}
   leftDoor: {fileID: 578714313}
+  powerUI: {fileID: 609390941}
   rightDoorClosed: 0
   leftDoorClosed: 0
 --- !u!1 &1977051796

@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
     private bool aDown;
     public GameObject rightDoor;
     public GameObject leftDoor;
+    public GameObject powerUI;
     public bool rightDoorClosed;
     public bool leftDoorClosed;
     // Update is called once per frame
@@ -77,6 +78,23 @@ public class PlayerInput : MonoBehaviour
             if (rightDoor.transform.position.y < 1.8) rightDoor.transform.position = new Vector3(rightDoor.transform.position.x, rightDoor.transform.position.y + 0.05f, rightDoor.transform.position.z);
         }
     }
+    void checkPowerUse()
+    {
+        if (rightDoorClosed)
+        {
+            if (powerUI.GetComponent<power>().powerPercent > 0)
+                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+            else
+                rightDoorClosed = false;
+        }
+        if (leftDoorClosed)
+        {
+            if (powerUI.GetComponent<power>().powerPercent > 0)
+                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+            else
+                leftDoorClosed = false;
+        }
+    }
     void Start()
     {
         dDown = false;
@@ -88,6 +106,7 @@ public class PlayerInput : MonoBehaviour
     {
         viewIn();
         doorIn();
+        checkPowerUse();
     }
     void FixedUpdate()
     {

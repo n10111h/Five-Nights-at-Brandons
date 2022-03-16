@@ -18,6 +18,7 @@ public class CameraUI : MonoBehaviour
     public Texture cam6;
     public Texture cam7;
     public Texture cam8;
+    public GameObject powerUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +72,14 @@ public class CameraUI : MonoBehaviour
                 IsOpen = true;
             }
         }
+        if (IsOpen)
+        {
+            if (powerUI.GetComponent<power>().powerPercent > 0)
+                powerUI.GetComponent<power>().powerPercent -= 0.05f;
+            else
+                IsOpen = false;
+        }
+        
     }
     // Update is called once per frame
     void FixedUpdate()
