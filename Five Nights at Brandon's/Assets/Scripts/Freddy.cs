@@ -6,6 +6,7 @@ public class Freddy : MonoBehaviour
 {
     public GameObject powerUI;
     private float power;
+    public GameObject player;
     void Start()
     {
 
@@ -26,9 +27,10 @@ public class Freddy : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (power <= 0)
+        if (power < 0)
         {
             transform.position = new Vector3(0.145f, 0.553f, 6.62f);
+            transform.rotation = Quaternion.Euler(90, 90, 90);
         }
     }
 }
