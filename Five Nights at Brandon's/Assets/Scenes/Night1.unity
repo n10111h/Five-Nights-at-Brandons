@@ -1577,6 +1577,7 @@ GameObject:
   - component: {fileID: 345477006}
   - component: {fileID: 345477005}
   - component: {fileID: 345477004}
+  - component: {fileID: 345477009}
   m_Layer: 0
   m_Name: Chica
   m_TagString: Untagged
@@ -1757,6 +1758,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 90, y: 130, z: 90}
+--- !u!114 &345477009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345477003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b0d853a6c71e04cbaa3bcdcdba401e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
+  level: 0
 --- !u!1 &370274155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3365,7 @@ GameObject:
   - component: {fileID: 824349066}
   - component: {fileID: 824349065}
   - component: {fileID: 824349069}
+  - component: {fileID: 824349070}
   m_Layer: 0
   m_Name: Foxy
   m_TagString: Untagged
@@ -3530,6 +3546,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &824349070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824349064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e2e203dcc0eae4594aaf1736c555aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
+  level: 0
 --- !u!1 &841161544
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,7 +4705,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a31dc376e63f4d74dac9f4806f8d5b3e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.374
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6560,6 +6590,7 @@ GameObject:
   - component: {fileID: 1596590491}
   - component: {fileID: 1596590490}
   - component: {fileID: 1596590494}
+  - component: {fileID: 1596590495}
   m_Layer: 0
   m_Name: Bonnie
   m_TagString: Untagged
@@ -6740,6 +6771,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1596590495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596590489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7365db19ca96c2d45ac9bfeae7256ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUI: {fileID: 609390941}
+  level: 1
 --- !u!1 &1596904597
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,6 +7636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
   player: {fileID: 1961395559}
+  level: 0
 --- !u!1 &1775690422
 GameObject:
   m_ObjectHideFlags: 0
