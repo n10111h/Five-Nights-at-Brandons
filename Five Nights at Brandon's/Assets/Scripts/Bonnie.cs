@@ -97,23 +97,26 @@ public class Bonnie : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (power < 0)
+        if (level != 0)
         {
-            
-        }
-        else
-        {
-            if (Time.time - whenTime == Time.time) whenTime = Time.time;
-            if (Time.time - whenTime > (float) (10/level))
+            if (power < 0)
             {
-                float rand = Random.Range(0.0f, 99.0f);
-                if (rand < level)
+
+            }
+            else
+            {
+                if (Time.time - whenTime == Time.time) whenTime = Time.time;
+                if (Time.time - whenTime > (float)(10 / level))
                 {
-                    if (pos < 5) pos++;
-                    whenTime = 0;
+                    float rand = Random.Range(0.0f, 99.0f);
+                    if (rand < level)
+                    {
+                        if (pos < 5) pos++;
+                        whenTime = 0;
+                    }
                 }
             }
+            posUpdate();
         }
-        posUpdate();
     }
 }
