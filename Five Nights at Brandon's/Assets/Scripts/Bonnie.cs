@@ -9,6 +9,7 @@ public class Bonnie : MonoBehaviour
     private float time;
     public short level;
     private int pos;
+    public GameObject player;
     void posUpdate()
     {
         switch (pos)
@@ -34,8 +35,11 @@ public class Bonnie : MonoBehaviour
                 transform.rotation = Quaternion.Euler(75, -55, 0);
                 break;
             case 5:
-                transform.position = new Vector3(1.429f, 0.535f, 5.587f);
                 transform.rotation = Quaternion.Euler(90, -55, 0);
+                if (player.GetComponent<PlayerInput>().leftLightEn)
+                    transform.position = new Vector3(1.429f, 0.535f, 5.587f);
+                else
+                    transform.position = new Vector3(50f, 50f, 50f);
                 break;
             default:
                 break;
@@ -45,7 +49,7 @@ public class Bonnie : MonoBehaviour
     void Start()
     {
         time = Time.time;
-        pos = 0;
+        pos = 5;
     }
 
     // Update is called once per frame

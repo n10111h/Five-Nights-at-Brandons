@@ -8,8 +8,12 @@ public class PlayerInput : MonoBehaviour
     public GameObject rightDoor;
     public GameObject leftDoor;
     public GameObject powerUI;
+    public Light leftLight;
+    public Light rightLight;
     public bool rightDoorClosed;
     public bool leftDoorClosed;
+    public bool leftLightEn;
+    public bool rightLightEn;
     // Update is called once per frame
     float AngleAboutY(Transform obj)
     {
@@ -94,6 +98,42 @@ public class PlayerInput : MonoBehaviour
             else
                 leftDoorClosed = false;
         }
+        if (leftLightEn)
+        {
+            if (powerUI.GetComponent<power>().powerPercent > 0)
+                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+            else
+                leftLightEn = false;
+        }
+        if (rightLightEn)
+        {
+            if (powerUI.GetComponent<power>().powerPercent > 0)
+                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+            else
+                rightLightEn = false;
+        }
+    }
+    void lightIn()
+    {
+        if (Input.GetKey(KeyCode.Z))
+            leftLightEn = true;
+        else
+            leftLightEn = false;
+        if (Input.GetKey(KeyCode.C))
+            rightLightEn = true;
+        else
+            rightLightEn = false;
+    }
+    void lightOut()
+    {
+        if (leftLightEn)
+            leftLight.intensity = 1;
+        else
+            leftLight.intensity = 0;
+        if (rightLightEn)
+            rightLight.intensity = 1;
+        else
+            rightLight.intensity = 0;
     }
     void Start()
     {
@@ -101,9 +141,12 @@ public class PlayerInput : MonoBehaviour
         aDown = false;
         rightDoorClosed = false;
         leftDoorClosed = false;
+        leftLightEn = false;
+        rightLightEn = false;
     }
     void Update()
     {
+        lightIn();
         viewIn();
         doorIn();
         checkPowerUse();
@@ -112,5 +155,6 @@ public class PlayerInput : MonoBehaviour
     {
         viewOut();
         doorOut();
+        lightOut();
     }
 }
