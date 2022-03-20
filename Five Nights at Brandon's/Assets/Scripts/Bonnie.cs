@@ -7,6 +7,8 @@ public class Bonnie : MonoBehaviour
     public GameObject powerUI;
     private float power;
     private float time;
+    private float jumpTime;
+    private float whenTime;
     public short level;
     private int pos;
     public GameObject player;
@@ -40,6 +42,32 @@ public class Bonnie : MonoBehaviour
                     transform.position = new Vector3(1.429f, 0.535f, 5.587f);
                 else
                     transform.position = new Vector3(50f, 50f, 50f);
+                if (time == 0.0f) time = Time.time;
+                if (Time.time - time > 3) {
+                    float rand = Random.Range(0.0f, 999.0f);
+                    if (player.GetComponent<PlayerInput>().leftDoorClosed)
+                    {
+                        if (rand > (level * 40))
+                        {
+                            pos = 2;
+                            time = 0;
+                        }
+                    }
+                    else
+                    {
+                        if (rand < (level))
+                            pos = 6;
+                    }
+                }
+                break;
+            case 6:
+                if (Time.time - jumpTime == Time.time)
+                {
+                    jumpTime = Time.time;
+                }
+                transform.position = new Vector3(0.145f, 0.553f, 6.62f);
+                transform.rotation = Quaternion.Euler(90, 90, 90);
+                if (Time.time - jumpTime > 10) Application.Quit();
                 break;
             default:
                 break;
@@ -48,8 +76,10 @@ public class Bonnie : MonoBehaviour
     }
     void Start()
     {
-        time = Time.time;
-        pos = 5;
+        time = 0;
+        pos = 0;
+        jumpTime = 0;
+        whenTime = 0;
     }
 
     // Update is called once per frame
@@ -73,8 +103,16 @@ public class Bonnie : MonoBehaviour
         }
         else
         {
-            float rand = Random.Range(0.0f, 999.0f);
-            if (rand < level) pos++;
+            if (Time.time - whenTime == Time.time) whenTime = Time.time;
+            if (Time.time - whenTime > (float) (10/level))
+            {
+                float rand = Random.Range(0.0f, 99.0f);
+                if (rand < level)
+                {
+                    if (pos < 5) pos++;
+                    whenTime = 0;
+                }
+            }
         }
         posUpdate();
     }
