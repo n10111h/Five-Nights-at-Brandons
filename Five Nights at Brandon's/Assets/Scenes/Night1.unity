@@ -9316,6 +9316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
   level: 1
+  pos: 0
   player: {fileID: 1961395559}
 --- !u!1 &1596904597
 GameObject:
@@ -10864,6 +10865,7 @@ MonoBehaviour:
   leftDoorClosed: 0
   leftLightEn: 1
   rightLightEn: 0
+  bonnie: {fileID: 1596590489}
 --- !u!1 &1977051796
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     public bool leftDoorClosed;
     public bool leftLightEn;
     public bool rightLightEn;
+    public GameObject bonnie;
     // Update is called once per frame
     float AngleAboutY(Transform obj)
     {
@@ -154,6 +155,8 @@ public class PlayerInput : MonoBehaviour
             if (powerUI.GetComponent<power>().powerPercent > 0)
                 powerUI.GetComponent<power>().powerPercent -= 0.05f;
             else
+                camIsOpen = false;
+            if (bonnie.GetComponent<Bonnie>().pos == 6)
                 camIsOpen = false;
         }
 

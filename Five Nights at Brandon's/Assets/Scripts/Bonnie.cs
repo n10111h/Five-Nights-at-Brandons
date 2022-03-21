@@ -10,7 +10,7 @@ public class Bonnie : MonoBehaviour
     private float jumpTime;
     private float whenTime;
     public short level;
-    private int pos;
+    public int pos;
     public GameObject player;
     void posUpdate()
     {
