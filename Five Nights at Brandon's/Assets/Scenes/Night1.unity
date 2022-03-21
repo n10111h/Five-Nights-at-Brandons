@@ -2686,7 +2686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a780ddcdd5d94134aa2e7be1f37f44a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsOpen: 0
   CamDisplay: {fileID: 1748977068}
   cam1: {fileID: 8400000, guid: d4d31d4c006c20741926ab61f3d4532d, type: 2}
   cam2: {fileID: 8400000, guid: 3926a2ee678a2574e90a44426f440da9, type: 2}
@@ -2697,6 +2696,7 @@ MonoBehaviour:
   cam7: {fileID: 8400000, guid: f0226874470f6224bb7f91c741a2933a, type: 2}
   cam8: {fileID: 8400000, guid: e42323b454a75fb4eb8d725e46468f6f, type: 2}
   powerUI: {fileID: 609390941}
+  Player: {fileID: 1961395559}
 --- !u!1 &664404015
 GameObject:
   m_ObjectHideFlags: 0
@@ -10854,6 +10854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acbe267b0fb9db48a5e69eb6ac727bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camIsOpen: 0
   rightDoor: {fileID: 1388500837}
   leftDoor: {fileID: 578714313}
   powerUI: {fileID: 609390941}

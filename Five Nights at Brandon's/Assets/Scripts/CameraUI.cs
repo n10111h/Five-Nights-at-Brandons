@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CameraUI : MonoBehaviour
 {
     private float yPos;
-    public bool IsOpen;
+    private bool IsOpen;
     private RectTransform rt;
     private float height;
     public RawImage CamDisplay;
@@ -19,6 +19,7 @@ public class CameraUI : MonoBehaviour
     public Texture cam7;
     public Texture cam8;
     public GameObject powerUI;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,25 +62,7 @@ public class CameraUI : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            if (IsOpen)
-            {
-                IsOpen = false;
-            }
-            else
-            {
-                IsOpen = true;
-            }
-        }
-        if (IsOpen)
-        {
-            if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.05f;
-            else
-                IsOpen = false;
-        }
-        
+        IsOpen = Player.GetComponent<PlayerInput>().camIsOpen; 
     }
     // Update is called once per frame
     void FixedUpdate()

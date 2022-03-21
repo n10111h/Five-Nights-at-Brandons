@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private bool dDown;
+    public bool camIsOpen;
     private bool aDown;
     public GameObject rightDoor;
     public GameObject leftDoor;
@@ -135,6 +136,28 @@ public class PlayerInput : MonoBehaviour
         else
             rightLight.intensity = 0;
     }
+    void camIn()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            if (camIsOpen)
+            {
+                camIsOpen = false;
+            }
+            else
+            {
+                camIsOpen = true;
+            }
+        }
+        if (camIsOpen)
+        {
+            if (powerUI.GetComponent<power>().powerPercent > 0)
+                powerUI.GetComponent<power>().powerPercent -= 0.05f;
+            else
+                camIsOpen = false;
+        }
+
+    }
     void Start()
     {
         dDown = false;
@@ -146,6 +169,7 @@ public class PlayerInput : MonoBehaviour
     }
     void Update()
     {
+        camIn();
         lightIn();
         viewIn();
         doorIn();
