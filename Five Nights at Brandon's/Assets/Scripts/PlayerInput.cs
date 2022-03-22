@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
     public bool leftLightEn;
     public bool rightLightEn;
     public GameObject bonnie;
+    public GameObject chica;
     // Update is called once per frame
     float AngleAboutY(Transform obj)
     {
@@ -89,28 +90,28 @@ public class PlayerInput : MonoBehaviour
         if (rightDoorClosed)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+                powerUI.GetComponent<power>().powerPercent -= 1f*Time.deltaTime;
             else
                 rightDoorClosed = false;
         }
         if (leftDoorClosed)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+                powerUI.GetComponent<power>().powerPercent -= 1.0f*Time.deltaTime;
             else
                 leftDoorClosed = false;
         }
         if (leftLightEn)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+                powerUI.GetComponent<power>().powerPercent -= 0.5f*Time.deltaTime;
             else
                 leftLightEn = false;
         }
         if (rightLightEn)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.1f;
+                powerUI.GetComponent<power>().powerPercent -= 0.5f*Time.deltaTime;
             else
                 rightLightEn = false;
         }
@@ -153,10 +154,10 @@ public class PlayerInput : MonoBehaviour
         if (camIsOpen)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.05f;
+                powerUI.GetComponent<power>().powerPercent -= 0.25f*Time.deltaTime;
             else
                 camIsOpen = false;
-            if (bonnie.GetComponent<Bonnie>().pos == 6)
+            if (bonnie.GetComponent<Bonnie>().pos == 6 || chica.GetComponent<Chica>().pos == 4)
                 camIsOpen = false;
         }
 
