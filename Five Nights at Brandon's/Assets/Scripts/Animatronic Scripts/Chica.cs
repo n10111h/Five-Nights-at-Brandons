@@ -29,9 +29,9 @@ public class Chica : MonoBehaviour
                 transform.rotation = Quaternion.Euler(90, 180, 150);
                 break;
             case 3:
-                transform.rotation = Quaternion.Euler(90, 130, 90);
+                transform.rotation = Quaternion.Euler(90, 130, 70);
                 if (player.GetComponent<PlayerInput>().rightLightEn)
-                    transform.position = new Vector3(-1.6f, 0.6f, 5.1f);
+                    transform.position = new Vector3(-1.221f, 0.6f, 5.556f);
                 else
                     transform.position = new Vector3(50f, 50f, 50f);
                 if (time == 0.0f) time = Time.time;
@@ -70,7 +70,6 @@ public class Chica : MonoBehaviour
     void Start()
     {
         time = 0;
-        pos = 0;
         jumpTime = 0;
         whenTime = 0;
     }

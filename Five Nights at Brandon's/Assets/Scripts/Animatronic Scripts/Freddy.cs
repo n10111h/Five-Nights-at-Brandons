@@ -112,7 +112,11 @@ public class Freddy : MonoBehaviour
                     float rand = Random.Range(0.0f, 99.0f);
                     if (rand < level)
                     {
-                        if (pos < 4) pos++;
+                        if (pos < 4)
+                        {
+                            pos++;
+                        }
+
                         whenTime = 0;
                     }
                 }
