@@ -20,6 +20,7 @@ public class CameraUI : MonoBehaviour
     public Texture cam8;
     public GameObject powerUI;
     public GameObject Player;
+    public int camNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,8 @@ public class CameraUI : MonoBehaviour
     }
     public void changeCam(int num)
     {
-        switch (num)
+        camNum = num;
+        switch (camNum)
         {
             case 1:
                 CamDisplay.texture = cam1;
@@ -62,7 +64,15 @@ public class CameraUI : MonoBehaviour
     }
     void Update()
     {
-        IsOpen = Player.GetComponent<PlayerInput>().camIsOpen; 
+        IsOpen = Player.GetComponent<PlayerInput>().camIsOpen;
+        if (!IsOpen)
+        {
+            camNum = 10;
+        }
+        else
+        {
+            changeCam(6);
+        }
     }
     // Update is called once per frame
     void FixedUpdate()

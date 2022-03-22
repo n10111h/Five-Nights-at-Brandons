@@ -11,6 +11,7 @@ public class Freddy : MonoBehaviour
     public short level;
     public int pos;
     public GameObject player;
+    public CameraUI cam;
     void posUpdate()
     {
         switch (pos)
@@ -94,6 +95,28 @@ public class Freddy : MonoBehaviour
 
         }
     }
+    bool lookedAt() {
+        switch (pos)
+        {
+            case 0:
+                if (cam.camNum == 6)
+                    return true;
+                else
+                    return false;
+            case 1:
+                if (cam.camNum == 7)
+                    return true;
+                else
+                    return false;
+            case 2:
+                if (cam.camNum == 8)
+                    return true;
+                else
+                    return false;
+            default:
+                return false;
+        }
+    }
     void FixedUpdate()
     {
         if (level != 0)
@@ -113,16 +136,23 @@ public class Freddy : MonoBehaviour
                 if (Time.time - whenTime == Time.time) whenTime = Time.time;
                 if (Time.time - whenTime > (float)(40 / level))
                 {
-                    float rand = Random.Range(0.0f, 99.0f);
-                    if (rand < level)
+                    if (lookedAt())
                     {
-                        if (pos < 4)
-                        {
-                            if (pos == 0)
-                                pos++;
-                        }
-
                         whenTime = 0;
+                    }
+                    else
+                    {
+                        float rand = Random.Range(0.0f, 99.0f);
+                        if (rand < level)
+                        {
+                            if (pos < 4)
+                            {
+                                if (pos == 0)
+                                    pos++;
+                            }
+
+                            whenTime = 0;
+                        }
                     }
                 }
             }

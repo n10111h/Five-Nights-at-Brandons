@@ -2935,6 +2935,7 @@ MonoBehaviour:
   cam8: {fileID: 8400000, guid: e42323b454a75fb4eb8d725e46468f6f, type: 2}
   powerUI: {fileID: 609390941}
   Player: {fileID: 1961395559}
+  camNum: 0
 --- !u!1 &664404015
 GameObject:
   m_ObjectHideFlags: 0
@@ -10500,9 +10501,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
-  level: 0
+  level: 1
   pos: 0
   player: {fileID: 1961395559}
+  cam: {fileID: 618981393}
 --- !u!1 &1775690422
 GameObject:
   m_ObjectHideFlags: 0
