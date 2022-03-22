@@ -104,7 +104,7 @@ public class Chica : MonoBehaviour
                     float rand = Random.Range(0.0f, 99.0f);
                     if (rand < level)
                     {
-                        if (pos < 5) pos++;
+                        if (pos < 3) pos++;
                         whenTime = 0;
                     }
                 }

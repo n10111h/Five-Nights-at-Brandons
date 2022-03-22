@@ -6,20 +6,82 @@ public class Freddy : MonoBehaviour
 {
     public GameObject powerUI;
     private float power;
-    public GameObject player;
     private float time;
+    private float jumpTime;
+    private float whenTime;
     public short level;
-    private int pos;
+    public int pos;
+    public GameObject player;
+    void posUpdate()
+    {
+        switch (pos)
+        {
+            case 0:
+                transform.position = new Vector3(0.97f, 1.087f, -5.585f);
+                transform.rotation = Quaternion.Euler(90, 130, 90);
+                break;
+            case 1:
+                transform.position = new Vector3(-4.5f, 0.6f, -1.9f);
+                transform.rotation = Quaternion.Euler(90, 180, 130);
+                break;
+            case 2:
+                break;
+            case 3:
+                transform.position = new Vector3(-1.356f, 0.6f, 4.183f);
+                transform.rotation = Quaternion.Euler(90, 180, 150);
+                break;
+            case 4:
+                transform.rotation = Quaternion.Euler(90, 130, 90);
+                if (player.GetComponent<PlayerInput>().rightLightEn)
+                    transform.position = new Vector3(-1.6f, 0.6f, 5.1f);
+                else
+                    transform.position = new Vector3(50f, 50f, 50f);
+                if (time == 0.0f) time = Time.time;
+                if (Time.time - time > 3)
+                {
+                    float rand = Random.Range(0.0f, 999.0f);
+                    if (player.GetComponent<PlayerInput>().rightDoorClosed)
+                    {
+                        if (rand > (level * 40))
+                        {
+                            pos = 4;
+                            time = 0;
+                        }
+                    }
+                    else
+                    {
+                        if (rand < (level))
+                            pos = 5;
+                    }
+                }
+                break;
+            case 5:
+                if (Time.time - jumpTime == Time.time)
+                {
+                    jumpTime = Time.time;
+                }
+                transform.position = new Vector3(0.145f, 0.553f, 6.62f);
+                transform.rotation = Quaternion.Euler(90, 90, 90);
+                if (Time.time - jumpTime > 10) Application.Quit();
+                break;
+            default:
+                break;
+
+        }
+    }
     void Start()
     {
-        time = Time.time;
+        time = 0;
+        pos = 0;
+        jumpTime = 0;
+        whenTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         power = powerUI.GetComponent<power>().powerPercent;
-        if (power>0)
+        if (power > 0)
         {
 
         }
@@ -30,21 +92,32 @@ public class Freddy : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (power < 0)
+        if (level != 0)
         {
-            if (Time.time - time > 15)
+            if (power <= 0)
             {
-                time = Time.time;
+                if (Time.time - time > 15)
+                {
+                    time = Time.time;
+                }
+                transform.position = new Vector3(0.145f, 0.553f, 6.62f);
+                transform.rotation = Quaternion.Euler(90, 90, 90);
+                if (Time.time - time > 10) Application.Quit();
             }
-            transform.position = new Vector3(0.145f, 0.553f, 6.62f);
-            transform.rotation = Quaternion.Euler(90, 90, 90);
-            if (Time.time - time > 10) Application.Quit();
-        }
-
-        else
-        {
-            float rand = Random.Range(0.0f, 999.0f);
-            if (rand < level) pos++;
+            else
+            {
+                if (Time.time - whenTime == Time.time) whenTime = Time.time;
+                if (Time.time - whenTime > (float)(10 / level))
+                {
+                    float rand = Random.Range(0.0f, 99.0f);
+                    if (rand < level)
+                    {
+                        if (pos < 4) pos++;
+                        whenTime = 0;
+                    }
+                }
+            }
+            posUpdate();
         }
     }
 }
