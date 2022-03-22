@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Freddy : MonoBehaviour
 {
     public GameObject powerUI;
@@ -50,7 +49,13 @@ public class Freddy : MonoBehaviour
                     else
                     {
                         if (rand < (level))
-                            pos = 5;
+                        {
+                            if (player.transform.eulerAngles.y > 200)
+                                time = 0;
+                            else
+                                pos = 5;
+                        }
+
                     }
                 }
                 break;
@@ -106,15 +111,15 @@ public class Freddy : MonoBehaviour
             else
             {
                 if (Time.time - whenTime == Time.time) whenTime = Time.time;
-                if (Time.time - whenTime > (float)(20 / level))
+                if (Time.time - whenTime > (float)(40 / level))
                 {
                     float rand = Random.Range(0.0f, 99.0f);
                     if (rand < level)
                     {
                         if (pos < 4)
                         {
-                            if (pos == 0 )
-                            pos++;
+                            if (pos == 0)
+                                pos++;
                         }
 
                         whenTime = 0;
