@@ -17,25 +17,24 @@ public class Freddy : MonoBehaviour
         switch (pos)
         {
             case 0:
-                transform.position = new Vector3(0.97f, 1.087f, -5.585f);
+                transform.position = new Vector3(-0.02829921f, 1.087964f, -5.518169f);
                 transform.rotation = Quaternion.Euler(90, 130, 90);
                 break;
             case 1:
-                transform.position = new Vector3(-4.5f, 0.6f, -1.9f);
-                transform.rotation = Quaternion.Euler(90, 180, 130);
+                transform.position = new Vector3(-4.297f, 0.6f, -2.281f);
+                transform.rotation = Quaternion.Euler(90, 130, 130);
                 break;
             case 2:
+                transform.position = new Vector3(4.351f, 0.617f, -4.164f);
+                transform.rotation = Quaternion.Euler(90, 180, -160);
                 break;
             case 3:
-                transform.position = new Vector3(-1.356f, 0.6f, 4.183f);
-                transform.rotation = Quaternion.Euler(90, 180, 150);
+                transform.position = new Vector3(-0.46f, 1.13f, -3.73f);
+                transform.rotation = Quaternion.Euler(19.299f, 20.642f, -3.076f);
                 break;
             case 4:
-                transform.rotation = Quaternion.Euler(90, 130, 90);
-                if (player.GetComponent<PlayerInput>().rightLightEn)
-                    transform.position = new Vector3(-1.6f, 0.6f, 5.1f);
-                else
-                    transform.position = new Vector3(50f, 50f, 50f);
+                transform.rotation = Quaternion.Euler(90, 180, 115);
+                transform.position = new Vector3(-1.092f, 0.715f, 3.505f);
                 if (time == 0.0f) time = Time.time;
                 if (Time.time - time > 3)
                 {
@@ -107,13 +106,14 @@ public class Freddy : MonoBehaviour
             else
             {
                 if (Time.time - whenTime == Time.time) whenTime = Time.time;
-                if (Time.time - whenTime > (float)(10 / level))
+                if (Time.time - whenTime > (float)(20 / level))
                 {
                     float rand = Random.Range(0.0f, 99.0f);
                     if (rand < level)
                     {
                         if (pos < 4)
                         {
+                            if (pos == 0 )
                             pos++;
                         }
 

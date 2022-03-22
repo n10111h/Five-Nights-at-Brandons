@@ -42,7 +42,7 @@ public class Chica : MonoBehaviour
                     {
                         if (rand > (level * 40))
                         {
-                            pos = 2;
+                            pos = 1;
                             time = 0;
                         }
                     }
@@ -98,7 +98,7 @@ public class Chica : MonoBehaviour
             else
             {
                 if (Time.time - whenTime == Time.time) whenTime = Time.time;
-                if (Time.time - whenTime > (float)(20 / level))
+                if (Time.time - whenTime > (float)(50 / level))
                 {
                     float rand = Random.Range(0.0f, 99.0f);
                     if (rand < level)

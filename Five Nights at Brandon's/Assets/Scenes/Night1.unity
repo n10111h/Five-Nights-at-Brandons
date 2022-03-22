@@ -4484,7 +4484,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922857399}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -9554,7 +9554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
-  level: 0
+  level: 1
   pos: 0
   player: {fileID: 1961395559}
 --- !u!1 &1596904597
