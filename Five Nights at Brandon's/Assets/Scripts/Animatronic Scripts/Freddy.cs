@@ -77,7 +77,6 @@ public class Freddy : MonoBehaviour
     void Start()
     {
         time = 0;
-        pos = 0;
         jumpTime = 0;
         whenTime = 0;
     }
@@ -148,8 +147,7 @@ public class Freddy : MonoBehaviour
                         {
                             if (pos < 4)
                             {
-                                if (pos == 0)
-                                    pos++;
+                                pos++;
                             }
 
                             whenTime = 0;
