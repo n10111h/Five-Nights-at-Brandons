@@ -119,19 +119,21 @@ public class Freddy : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (level != 0)
+
+        if (power <= 0)
         {
-            if (power <= 0)
+
+            if (Time.time - time > 15)
             {
-                if (Time.time - time > 15)
-                {
-                    time = Time.time;
-                }
-                transform.position = new Vector3(0.145f, 0.553f, 6.62f);
-                transform.rotation = Quaternion.Euler(90, 90, 90);
-                if (Time.time - time > 10) Application.Quit();
+                time = Time.time;
             }
-            else
+            transform.position = new Vector3(0.145f, 0.553f, 6.62f);
+            transform.rotation = Quaternion.Euler(90, 90, 90);
+            if (Time.time - time > 10) Application.Quit();
+        }
+        else
+        {
+            if (level != 0)
             {
                 if (Time.time - whenTime == Time.time) whenTime = Time.time;
                 if (Time.time - whenTime > (float)(40 / level))
@@ -154,8 +156,9 @@ public class Freddy : MonoBehaviour
                         }
                     }
                 }
+                posUpdate();
             }
-            posUpdate();
         }
+        
     }
 }
