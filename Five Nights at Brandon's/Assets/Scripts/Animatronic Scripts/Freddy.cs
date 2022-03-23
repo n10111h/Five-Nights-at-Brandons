@@ -96,6 +96,7 @@ public class Freddy : MonoBehaviour
         }
     }
     bool lookedAt() {
+        if (!cam.IsOpen) return false;
         switch (pos)
         {
             case 0:
