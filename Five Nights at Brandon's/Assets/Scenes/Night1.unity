@@ -3888,6 +3888,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
   level: 0
+  pos: 0
+  player: {fileID: 1961395559}
+  cam: {fileID: 618981393}
 --- !u!1 &841161544
 GameObject:
   m_ObjectHideFlags: 0

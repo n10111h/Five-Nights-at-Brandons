@@ -12,7 +12,7 @@ public class OpeningScreenScript : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Time.time - pace > 3f)
+        if (Time.time - pace > 2f)
         {
             GetComponent<RectTransform>().anchoredPosition = new Vector2(2 * Screen.width, 2 * Screen.height);
         }
