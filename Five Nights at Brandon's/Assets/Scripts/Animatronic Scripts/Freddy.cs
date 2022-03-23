@@ -122,6 +122,7 @@ public class Freddy : MonoBehaviour
 
         if (power <= 0)
         {
+            pos = -5;
             if (Time.time - time > 15)
             {
                 time = Time.time;
@@ -156,6 +157,10 @@ public class Freddy : MonoBehaviour
                     }
                 }
 
+            }
+            else
+            {
+                pos = 0;
             }
         }
         posUpdate();

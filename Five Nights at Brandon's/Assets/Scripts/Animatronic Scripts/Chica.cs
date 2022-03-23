@@ -25,7 +25,7 @@ public class Chica : MonoBehaviour
                 transform.rotation = Quaternion.Euler(90, 180, 130);
                 break;
             case 2:
-                transform.position = new Vector3(-1.356f, 0.6f, 4.183f);
+                transform.position = new Vector3(-1.356f, 0.6f, 3.7f);
                 transform.rotation = Quaternion.Euler(90, 180, 150);
                 break;
             case 3:

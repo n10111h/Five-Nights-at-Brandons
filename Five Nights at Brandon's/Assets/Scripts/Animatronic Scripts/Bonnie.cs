@@ -33,7 +33,7 @@ public class Bonnie : MonoBehaviour
                 transform.rotation = Quaternion.Euler(90, 0, 90);
                 break;
             case 4:
-                transform.position = new Vector3(1.265f, 0.535f, 4.554f);
+                transform.position = new Vector3(1.265f, 0.535f, 4f);
                 transform.rotation = Quaternion.Euler(75, -55, 0);
                 break;
             case 5:

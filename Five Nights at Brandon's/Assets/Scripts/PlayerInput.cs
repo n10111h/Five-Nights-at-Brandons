@@ -90,28 +90,28 @@ public class PlayerInput : MonoBehaviour
         if (rightDoorClosed)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 1f*Time.deltaTime;
+                powerUI.GetComponent<power>().powerPercent -= 0.75f*Time.deltaTime;
             else
                 rightDoorClosed = false;
         }
         if (leftDoorClosed)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 1.0f*Time.deltaTime;
+                powerUI.GetComponent<power>().powerPercent -= 0.75f*Time.deltaTime;
             else
                 leftDoorClosed = false;
         }
         if (leftLightEn)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.5f*Time.deltaTime;
+                powerUI.GetComponent<power>().powerPercent -= 0.2f*Time.deltaTime;
             else
                 leftLightEn = false;
         }
         if (rightLightEn)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.5f*Time.deltaTime;
+                powerUI.GetComponent<power>().powerPercent -= 0.2f*Time.deltaTime;
             else
                 rightLightEn = false;
         }
@@ -130,11 +130,11 @@ public class PlayerInput : MonoBehaviour
     void lightOut()
     {
         if (leftLightEn)
-            leftLight.intensity = 1;
+            leftLight.intensity = 2;
         else
             leftLight.intensity = 0;
         if (rightLightEn)
-            rightLight.intensity = 1;
+            rightLight.intensity = 2;
         else
             rightLight.intensity = 0;
     }
@@ -154,7 +154,7 @@ public class PlayerInput : MonoBehaviour
         if (camIsOpen)
         {
             if (powerUI.GetComponent<power>().powerPercent > 0)
-                powerUI.GetComponent<power>().powerPercent -= 0.25f*Time.deltaTime;
+                powerUI.GetComponent<power>().powerPercent -= 0.1f*Time.deltaTime;
             else
                 camIsOpen = false;
             if (bonnie.GetComponent<Bonnie>().pos == 6 || chica.GetComponent<Chica>().pos == 4)
