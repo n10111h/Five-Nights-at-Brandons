@@ -119,7 +119,7 @@ public class Freddy : MonoBehaviour
     }
     void FixedUpdate()
     {
-
+        power = powerUI.GetComponent<power>().powerPercent;
         if (power <= 0)
         {
             pos = -5;

@@ -9854,7 +9854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
-  level: 4
+  level: 3
   pos: 0
   player: {fileID: 1961395559}
 --- !u!1 &1596904597
@@ -10814,7 +10814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUI: {fileID: 609390941}
-  level: 0
+  level: 1
   pos: 0
   player: {fileID: 1961395559}
   cam: {fileID: 618981393}
