@@ -61,13 +61,25 @@ public class Freddy : MonoBehaviour
                 }
                 break;
             case 5:
-                if (Time.time - jumpTime == Time.time)
+                if (Time.timeSinceLevelLoad - jumpTime == Time.time)
                 {
-                    jumpTime = Time.time;
+                    jumpTime = Time.timeSinceLevelLoad;
                 }
                 transform.position = new Vector3(0.145f, 0.553f, 6.62f);
                 transform.rotation = Quaternion.Euler(90, 90, 90);
-                if (Time.time - jumpTime > 10) Application.Quit();
+                if (Time.timeSinceLevelLoad - jumpTime > 10)
+                {
+#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+    Debug.Log(this.name+" : "+this.GetType()+" : "+System.Reflection.MethodBase.GetCurrentMethod().Name); 
+#endif
+#if (UNITY_EDITOR)
+    UnityEditor.EditorApplication.isPlaying = false;
+#elif (UNITY_STANDALONE)
+    Application.Quit();
+#elif (UNITY_WEBGL)
+    Application.OpenURL("about:blank");
+#endif
+                }
                 break;
             default:
                 break;
@@ -123,20 +135,32 @@ public class Freddy : MonoBehaviour
         if (power <= 0)
         {
             pos = -5;
-            if (Time.time - time > 15)
+            if (Time.timeSinceLevelLoad - time > 15)
             {
-                time = Time.time;
+                time = Time.timeSinceLevelLoad;
             }
             transform.position = new Vector3(0.145f, 0.553f, 6.62f);
             transform.rotation = Quaternion.Euler(90, 90, 90);
-            if (Time.time - time > 10) Application.Quit();
+            if (Time.time - time > 10)
+            {
+#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+    Debug.Log(this.name+" : "+this.GetType()+" : "+System.Reflection.MethodBase.GetCurrentMethod().Name); 
+#endif
+#if (UNITY_EDITOR)
+    UnityEditor.EditorApplication.isPlaying = false;
+#elif (UNITY_STANDALONE)
+    Application.Quit();
+#elif (UNITY_WEBGL)
+    Application.OpenURL("about:blank");
+#endif
+            }
         }
         else
         {
             if (level != 0)
             {
-                if (Time.time - whenTime == Time.time) whenTime = Time.time;
-                if (Time.time - whenTime > (float)(40 / level))
+                if (Time.timeSinceLevelLoad - whenTime == Time.time) whenTime = Time.timeSinceLevelLoad;
+                if (Time.timeSinceLevelLoad - whenTime > (float)(40 / level))
                 {
                     if (lookedAt())
                     {

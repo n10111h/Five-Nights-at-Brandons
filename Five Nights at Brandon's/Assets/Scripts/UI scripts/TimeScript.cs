@@ -15,8 +15,8 @@ public class TimeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hour = Time.time / 30;
-        if (hour > 6)
+        hour = Time.timeSinceLevelLoad / 30;
+        if (hour > 6 && Time.time > 5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

@@ -77,7 +77,18 @@ public class Foxy : MonoBehaviour
                 }
                 transform.position = new Vector3(0.145f, 0.553f, 6.62f);
                 transform.rotation = Quaternion.Euler(90, 90, 90);
-                if (Time.time - jumpTime > 10) Application.Quit();
+                if (Time.time - jumpTime > 10) {
+#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+    Debug.Log(this.name+" : "+this.GetType()+" : "+System.Reflection.MethodBase.GetCurrentMethod().Name); 
+#endif
+#if (UNITY_EDITOR)
+    UnityEditor.EditorApplication.isPlaying = false;
+#elif (UNITY_STANDALONE)
+    Application.Quit();
+#elif (UNITY_WEBGL)
+    Application.OpenURL("about:blank");
+#endif
+                }
                 break;
             default:
                 break;
