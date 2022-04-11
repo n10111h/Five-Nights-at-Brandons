@@ -77,7 +77,7 @@ public class Freddy : MonoBehaviour
 #elif (UNITY_STANDALONE)
     Application.Quit();
 #elif (UNITY_WEBGL)
-    Application.OpenURL("about:blank");
+    SceneManager.LoadScene(11);
 #endif
                 }
                 break;
@@ -151,7 +151,7 @@ public class Freddy : MonoBehaviour
 #elif (UNITY_STANDALONE)
     Application.Quit();
 #elif (UNITY_WEBGL)
-    Application.OpenURL("about:blank");
+    SceneManager.LoadScene(11);
 #endif
             }
         }

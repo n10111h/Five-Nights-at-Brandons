@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/You Win.unity
     guid: 54a65fc9319c61847bfdacd83a1610e4
+  - enabled: 1
+    path: Assets/Scenes/you loose lmao..unity
+    guid: a8105fdeab9888b4ba897b255129c9ff
   m_configObjects: {}
