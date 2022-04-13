@@ -52,7 +52,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (aDown)
         {
-            if (AngleAboutY(this.transform) < -130 || AngleAboutY(this.transform) > 0) transform.Rotate(0f, -2f, 0f, Space.World);
+            if (AngleAboutY(this.transform) < -130 || AngleAboutY(this.transform) > 0) transform.Rotate(0f, -5f, 0f, Space.World);
         }
     }
     void doorIn()

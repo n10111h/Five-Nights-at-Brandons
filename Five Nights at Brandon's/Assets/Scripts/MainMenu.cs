@@ -14,12 +14,12 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitGame()
     {
-        text.fontSize = 12;
+        text.fontSize = 24;
         text.text = "No escape, only way out is Brandon";
     }
     public void HowTo()
     {
-        direction.fontSize = 12;
-        direction.text = "A and D to move your view. Q and E to toggle doors.\nSpace to toggle Cams. Click on cam UI for respective cams.\n z and c for lights \n Other than that just survive idk.";
+        direction.fontSize = 13;
+        direction.text = "A and D to move your view. Q and E to toggle doors.\nSpace to toggle Cams. Click on cam UI for respective cams.\n z and c for lights. Other than that just survive idk.";
     }
 }
