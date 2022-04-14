@@ -17,7 +17,7 @@ public class PlayerInput : MonoBehaviour
     public bool rightLightEn;
     public GameObject bonnie;
     public GameObject chica;
-    // Update is called once per frame
+    public int targetFrameRate = 15;
     float AngleAboutY(Transform obj)
     {
         Vector3 objFwd = obj.forward;
@@ -164,6 +164,8 @@ public class PlayerInput : MonoBehaviour
     }
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = targetFrameRate;
         dDown = false;
         aDown = false;
         rightDoorClosed = false;
