@@ -18,7 +18,7 @@ public class Bonnie : MonoBehaviour
         {
             case 0:
                 transform.position = new Vector3(0.623f, 1.087f, -5.518f);
-                transform.rotation = Quaternion.Euler(90,130,90);
+                transform.rotation = Quaternion.Euler(90, 130, 90);
                 break;
             case 1:
                 transform.position = new Vector3(4.777f, 0.873f, -3.446f);
@@ -43,7 +43,8 @@ public class Bonnie : MonoBehaviour
                 else
                     transform.position = new Vector3(50f, 50f, 50f);
                 if (time == 0.0f) time = Time.time;
-                if (Time.time - time > 3) {
+                if (Time.time - time > 3)
+                {
                     float rand = Random.Range(0.0f, 999.0f);
                     if (player.GetComponent<PlayerInput>().leftDoorClosed)
                     {
@@ -69,66 +70,69 @@ public class Bonnie : MonoBehaviour
                 transform.rotation = Quaternion.Euler(90, 90, 90);
                 if (Time.time - jumpTime > 10)
                 {
-#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
-    Debug.Log(this.name+" : "+this.GetType()+" : "+System.Reflection.MethodBase.GetCurrentMethod().Name); 
-#endif
-#if (UNITY_EDITOR)
-    UnityEditor.EditorApplication.isPlaying = false;
-#elif (UNITY_STANDALONE)
-    Application.Quit();
-#elif (UNITY_WEBGL)
-    SceneManager.LoadScene(11);
-#endif
-                }
-                break;
-            default:
-                break;
+                    /*if (UNITY_EDITOR || DEVELOPMENT_BUILD)
+                        Debug.Log(this.name+" : "+this.GetType()+" : "+System.Reflection.MethodBase.GetCurrentMethod().Name); 
+                    endif
+                    if (UNITY_EDITOR)
+                        UnityEditor.EditorApplication.isPlaying = false;
+                    elif (UNITY_STANDALONE)
+                        Application.Quit();
+                    elif (UNITY_WEBGL)
+                        SceneManager.LoadScene(11);
+                    endif
+                                    }
+                                    break;
+                                default:
+                                    break;
 
-        }
-    }
-    void Start()
-    {
-        time = 0;
-        pos = 0;
-        jumpTime = 0;
-        whenTime = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        power = powerUI.GetComponent<power>().powerPercent;
-        if (power>0)
-        {
-            
-        }
-        else
-        {
-
-        }
-    }
-    void FixedUpdate()
-    {
-        if (level != 0)
-        {
-            if (power < 0)
-            {
-
-            }
-            else
-            {
-                if (Time.time - whenTime == Time.time) whenTime = Time.time;
-                if (Time.time - whenTime > (float)(20 / level))
-                {
-                    float rand = Random.Range(0.0f, 99.0f);
-                    if (rand < level)
+                            }
+                        }*/
+                    void Start()
                     {
-                        if (pos < 5) pos++;
+                        time = 0;
+                        pos = 0;
+                        jumpTime = 0;
                         whenTime = 0;
                     }
+
+                    // Update is called once per frame
+                    void Update()
+                    {
+                        power = powerUI.GetComponent<power>().powerPercent;
+                        if (power > 0)
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    void FixedUpdate()
+                    {
+                        if (level != 0)
+                        {
+                            if (power < 0)
+                            {
+
+                            }
+                            else
+                            {
+                                if (Time.time - whenTime == Time.time) whenTime = Time.time;
+                                if (Time.time - whenTime > (float)(20 / level))
+                                {
+                                    float rand = Random.Range(0.0f, 99.0f);
+                                    if (rand < level)
+                                    {
+                                        if (pos < 5) pos++;
+                                        whenTime = 0;
+                                    }
+                                }
+                            }
+                            posUpdate();
+                        }
+                    }
                 }
-            }
-            posUpdate();
         }
     }
 }
